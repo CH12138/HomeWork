@@ -1,8 +1,8 @@
 ## java的异常处理
 
-![img](https://github.com/CH12138/HomeWork/ch/src/resources/images/4.jpg)
+![img](../../resources/images/4.jpg)
 
-![a5a42a1414eb447a98c288a201b1f919](https://github.com/CH12138/HomeWork/ch/src/resources/images/1.jpg)
+![a5a42a1414eb447a98c288a201b1f919](../../resources/images/1.jpg)
 
 
 
