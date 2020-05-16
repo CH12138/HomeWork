@@ -1,8 +1,8 @@
 ## java的异常处理
 
-![img](https://www.runoob.com/wp-content/uploads/2013/12/12-130Q1234I6223.jpg)
+![img](../../resources/images/4.jpg)
 
-![a5a42a1414eb447a98c288a201b1f919](C:\Users\Administrator\Desktop\a5a42a1414eb447a98c288a201b1f919.jpg)
+![a5a42a1414eb447a98c288a201b1f919](../../resources/images/1.jpg)
 
 
 
