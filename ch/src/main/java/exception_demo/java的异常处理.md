@@ -2,6 +2,10 @@
 
 ![img](https://www.runoob.com/wp-content/uploads/2013/12/12-130Q1234I6223.jpg)
 
+![a5a42a1414eb447a98c288a201b1f919](C:\Users\Administrator\Desktop\a5a42a1414eb447a98c288a201b1f919.jpg)
+
+
+
 在java程序设计语言中，异常对象都是派生于Throwable类的一个实例。
 
 所有的异常都是有Throwable继承而来

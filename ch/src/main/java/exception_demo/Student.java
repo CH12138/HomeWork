@@ -1,4 +1,4 @@
-package com.yunsi.day17.exception06;
+package exception_demo;
 
 public class Student {
 	public static final String AGE_ERROR="年龄设置有误！";
@@ -20,7 +20,7 @@ public class Student {
 	}
 	public void setAge(int age) throws IllegalAgeException {
 		if(age<=0 || age>120){
-			throw new IllegalAgeException(AGE_ERROR, Constant.AGE_ERROR_CODE);
+			throw new IllegalAgeException(AGE_ERROR, AGE_ERROR_CODE);
 		}
 		this.age = age;
 	}

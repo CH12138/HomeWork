@@ -1,4 +1,4 @@
-package com.yunsi.day17.exception06;
+package exception_demo;
 
 public class IllegalAgeException extends Exception{
 	

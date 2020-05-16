@@ -1,4 +1,4 @@
-package com.yunsi.day17.exception02;
+package exception_demo;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
