@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jrx.springbootdemo.mapper.Daily_sum_staMapper">
+  <resultMap id="BaseResultMap" type="com.jrx.springbootdemo.domain.Daily_sum_sta">
+    <result column="s_index" jdbcType="VARCHAR" property="s_index" />
+    <result column="cust_id" jdbcType="INTEGER" property="cust_id" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="update_time" />
+    <result column="trans_date" jdbcType="DATE" property="trans_date" />
+    <result column="surname" jdbcType="VARCHAR" property="surname" />
+    <result column="tran_max_amt" jdbcType="DECIMAL" property="tran_max_amt" />
+    <result column="pay_amt" jdbcType="DECIMAL" property="pay_amt" />
+    <result column="tran_cnt" jdbcType="INTEGER" property="tran_cnt" />
+    <result column="pay_cut" jdbcType="INTEGER" property="pay_cut" />
+    <result column="tran_amt" jdbcType="DECIMAL" property="tran_amt" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    s_index, cust_id, update_time, trans_date, surname, tran_max_amt, pay_amt, tran_cnt, 
+    pay_cut, tran_amt
+  </sql>
+  <select id="selectByExample" parameterType="com.jrx.springbootdemo.domain.Daily_sum_staExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from daily_sum_sta
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <insert id="insert" parameterType="com.jrx.springbootdemo.domain.Daily_sum_sta">
+    insert into daily_sum_sta (s_index, cust_id, update_time, 
+      trans_date, surname, tran_max_amt, 
+      pay_amt, tran_cnt, pay_cut, 
+      tran_amt)
+    values (#{s_index,jdbcType=VARCHAR}, #{cust_id,jdbcType=INTEGER}, #{update_time,jdbcType=TIMESTAMP}, 
+      #{trans_date,jdbcType=DATE}, #{surname,jdbcType=VARCHAR}, #{tran_max_amt,jdbcType=DECIMAL}, 
+      #{pay_amt,jdbcType=DECIMAL}, #{tran_cnt,jdbcType=INTEGER}, #{pay_cut,jdbcType=INTEGER}, 
+      #{tran_amt,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jrx.springbootdemo.domain.Daily_sum_sta">
+    insert into daily_sum_sta
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="s_index != null">
+        s_index,
+      </if>
+      <if test="cust_id != null">
+        cust_id,
+      </if>
+      <if test="update_time != null">
+        update_time,
+      </if>
+      <if test="trans_date != null">
+        trans_date,
+      </if>
+      <if test="surname != null">
+        surname,
+      </if>
+      <if test="tran_max_amt != null">
+        tran_max_amt,
+      </if>
+      <if test="pay_amt != null">
+        pay_amt,
+      </if>
+      <if test="tran_cnt != null">
+        tran_cnt,
+      </if>
+      <if test="pay_cut != null">
+        pay_cut,
+      </if>
+      <if test="tran_amt != null">
+        tran_amt,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="s_index != null">
+        #{s_index,jdbcType=VARCHAR},
+      </if>
+      <if test="cust_id != null">
+        #{cust_id,jdbcType=INTEGER},
+      </if>
+      <if test="update_time != null">
+        #{update_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="trans_date != null">
+        #{trans_date,jdbcType=DATE},
+      </if>
+      <if test="surname != null">
+        #{surname,jdbcType=VARCHAR},
+      </if>
+      <if test="tran_max_amt != null">
+        #{tran_max_amt,jdbcType=DECIMAL},
+      </if>
+      <if test="pay_amt != null">
+        #{pay_amt,jdbcType=DECIMAL},
+      </if>
+      <if test="tran_cnt != null">
+        #{tran_cnt,jdbcType=INTEGER},
+      </if>
+      <if test="pay_cut != null">
+        #{pay_cut,jdbcType=INTEGER},
+      </if>
+      <if test="tran_amt != null">
+        #{tran_amt,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.jrx.springbootdemo.domain.Daily_sum_sta">
+    <result column="s_index" jdbcType="VARCHAR" property="s_index" />
+    <result column="cust_id" jdbcType="INTEGER" property="cust_id" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="update_time" />
+    <result column="trans_date" jdbcType="DATE" property="trans_date" />
+    <result column="surname" jdbcType="VARCHAR" property="surname" />
+    <result column="tran_max_amt" jdbcType="DECIMAL" property="tran_max_amt" />
+    <result column="pay_amt" jdbcType="DECIMAL" property="pay_amt" />
+    <result column="tran_cnt" jdbcType="INTEGER" property="tran_cnt" />
+    <result column="pay_cut" jdbcType="INTEGER" property="pay_cut" />
+    <result column="tran_amt" jdbcType="DECIMAL" property="tran_amt" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    s_index, cust_id, update_time, trans_date, surname, tran_max_amt, pay_amt, tran_cnt, 
+    pay_cut, tran_amt
+  </sql>
+  <select id="selectByExample" parameterType="com.jrx.springbootdemo.domain.Daily_sum_staExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from daily_sum_sta
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <insert id="insert" parameterType="com.jrx.springbootdemo.domain.Daily_sum_sta">
+    insert into daily_sum_sta (s_index, cust_id, update_time, 
+      trans_date, surname, tran_max_amt, 
+      pay_amt, tran_cnt, pay_cut, 
+      tran_amt)
+    values (#{s_index,jdbcType=VARCHAR}, #{cust_id,jdbcType=INTEGER}, #{update_time,jdbcType=TIMESTAMP}, 
+      #{trans_date,jdbcType=DATE}, #{surname,jdbcType=VARCHAR}, #{tran_max_amt,jdbcType=DECIMAL}, 
+      #{pay_amt,jdbcType=DECIMAL}, #{tran_cnt,jdbcType=INTEGER}, #{pay_cut,jdbcType=INTEGER}, 
+      #{tran_amt,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jrx.springbootdemo.domain.Daily_sum_sta">
+    insert into daily_sum_sta
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="s_index != null">
+        s_index,
+      </if>
+      <if test="cust_id != null">
+        cust_id,
+      </if>
+      <if test="update_time != null">
+        update_time,
+      </if>
+      <if test="trans_date != null">
+        trans_date,
+      </if>
+      <if test="surname != null">
+        surname,
+      </if>
+      <if test="tran_max_amt != null">
+        tran_max_amt,
+      </if>
+      <if test="pay_amt != null">
+        pay_amt,
+      </if>
+      <if test="tran_cnt != null">
+        tran_cnt,
+      </if>
+      <if test="pay_cut != null">
+        pay_cut,
+      </if>
+      <if test="tran_amt != null">
+        tran_amt,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="s_index != null">
+        #{s_index,jdbcType=VARCHAR},
+      </if>
+      <if test="cust_id != null">
+        #{cust_id,jdbcType=INTEGER},
+      </if>
+      <if test="update_time != null">
+        #{update_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="trans_date != null">
+        #{trans_date,jdbcType=DATE},
+      </if>
+      <if test="surname != null">
+        #{surname,jdbcType=VARCHAR},
+      </if>
+      <if test="tran_max_amt != null">
+        #{tran_max_amt,jdbcType=DECIMAL},
+      </if>
+      <if test="pay_amt != null">
+        #{pay_amt,jdbcType=DECIMAL},
+      </if>
+      <if test="tran_cnt != null">
+        #{tran_cnt,jdbcType=INTEGER},
+      </if>
+      <if test="pay_cut != null">
+        #{pay_cut,jdbcType=INTEGER},
+      </if>
+      <if test="tran_amt != null">
+        #{tran_amt,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.jrx.springbootdemo.domain.Daily_sum_sta">
+    <result column="s_index" jdbcType="VARCHAR" property="s_index" />
+    <result column="cust_id" jdbcType="INTEGER" property="cust_id" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="update_time" />
+    <result column="trans_date" jdbcType="DATE" property="trans_date" />
+    <result column="surname" jdbcType="VARCHAR" property="surname" />
+    <result column="tran_max_amt" jdbcType="DECIMAL" property="tran_max_amt" />
+    <result column="pay_amt" jdbcType="DECIMAL" property="pay_amt" />
+    <result column="tran_cnt" jdbcType="INTEGER" property="tran_cnt" />
+    <result column="pay_cut" jdbcType="INTEGER" property="pay_cut" />
+    <result column="tran_amt" jdbcType="DECIMAL" property="tran_amt" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    s_index, cust_id, update_time, trans_date, surname, tran_max_amt, pay_amt, tran_cnt, 
+    pay_cut, tran_amt
+  </sql>
+  <select id="selectByExample" parameterType="com.jrx.springbootdemo.domain.Daily_sum_staExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from daily_sum_sta
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <insert id="insert" parameterType="com.jrx.springbootdemo.domain.Daily_sum_sta">
+    insert into daily_sum_sta (s_index, cust_id, update_time, 
+      trans_date, surname, tran_max_amt, 
+      pay_amt, tran_cnt, pay_cut, 
+      tran_amt)
+    values (#{s_index,jdbcType=VARCHAR}, #{cust_id,jdbcType=INTEGER}, #{update_time,jdbcType=TIMESTAMP}, 
+      #{trans_date,jdbcType=DATE}, #{surname,jdbcType=VARCHAR}, #{tran_max_amt,jdbcType=DECIMAL}, 
+      #{pay_amt,jdbcType=DECIMAL}, #{tran_cnt,jdbcType=INTEGER}, #{pay_cut,jdbcType=INTEGER}, 
+      #{tran_amt,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jrx.springbootdemo.domain.Daily_sum_sta">
+    insert into daily_sum_sta
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="s_index != null">
+        s_index,
+      </if>
+      <if test="cust_id != null">
+        cust_id,
+      </if>
+      <if test="update_time != null">
+        update_time,
+      </if>
+      <if test="trans_date != null">
+        trans_date,
+      </if>
+      <if test="surname != null">
+        surname,
+      </if>
+      <if test="tran_max_amt != null">
+        tran_max_amt,
+      </if>
+      <if test="pay_amt != null">
+        pay_amt,
+      </if>
+      <if test="tran_cnt != null">
+        tran_cnt,
+      </if>
+      <if test="pay_cut != null">
+        pay_cut,
+      </if>
+      <if test="tran_amt != null">
+        tran_amt,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="s_index != null">
+        #{s_index,jdbcType=VARCHAR},
+      </if>
+      <if test="cust_id != null">
+        #{cust_id,jdbcType=INTEGER},
+      </if>
+      <if test="update_time != null">
+        #{update_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="trans_date != null">
+        #{trans_date,jdbcType=DATE},
+      </if>
+      <if test="surname != null">
+        #{surname,jdbcType=VARCHAR},
+      </if>
+      <if test="tran_max_amt != null">
+        #{tran_max_amt,jdbcType=DECIMAL},
+      </if>
+      <if test="pay_amt != null">
+        #{pay_amt,jdbcType=DECIMAL},
+      </if>
+      <if test="tran_cnt != null">
+        #{tran_cnt,jdbcType=INTEGER},
+      </if>
+      <if test="pay_cut != null">
+        #{pay_cut,jdbcType=INTEGER},
+      </if>
+      <if test="tran_amt != null">
+        #{tran_amt,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+</mapper>
